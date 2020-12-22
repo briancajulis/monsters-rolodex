@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -9,18 +8,28 @@ class App extends Component {
       monsters: [
         {
           name: 'Frankenstein',
+          id: '145zsd',
         },
         {
           name: 'Dracula',
+          id: '167zsd',
         },
         {
           name: 'Zombie',
+          id: '555zsd',
         },
       ],
     };
   }
+
   render() {
-    return <div className='App'></div>;
+    return (
+      <div className='App'>
+        {this.state.monsters.map((monster) => {
+          return <h1 key={`${monster.id}`}>{monster.name}</h1>;
+        })}
+      </div>
+    );
   }
 }
 
