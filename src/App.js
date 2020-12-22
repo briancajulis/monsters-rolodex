@@ -10,6 +10,9 @@ class App extends Component {
       monsters: [],
       searchField: '',
     };
+
+    // One way of allowing functions to access the context
+    // this.onSearchBoxChange = this.onSearchBoxChange.bind(this);
   }
 
   componentDidMount() {
@@ -18,6 +21,7 @@ class App extends Component {
       .then((users) => this.setState({ monsters: users })); // set monsters to the users from response
   }
 
+  // Arrow function automatically binds to the context
   onSearchBoxChange = (e) => {
     this.setState({ searchField: e.target.value });
   };
@@ -30,7 +34,7 @@ class App extends Component {
     );
     return (
       <div className='App'>
-        <SearchBox onSearchBoxChange={(e) => this.onSearchBoxChange(e)} />
+        <SearchBox onSearchBoxChange={this.onSearchBoxChange} />
         <CardList monsters={filteredMonsters} />
       </div>
     );
