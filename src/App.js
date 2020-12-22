@@ -6,19 +6,21 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      string: 'Hello Brian',
+      monsters: [
+        {
+          name: 'Frankenstein',
+        },
+        {
+          name: 'Dracula',
+        },
+        {
+          name: 'Zombie',
+        },
+      ],
     };
   }
   render() {
-    return (
-      <div className='App'>
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <p>{this.state.string}</p>
-          <button>Change Text</button>
-        </header>
-      </div>
-    );
+    return <div className='App'></div>;
   }
 }
 
